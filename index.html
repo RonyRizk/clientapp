@@ -1,0 +1,12 @@
+<select  id="DDL_Students"></select>
+<script>
+    fetch('https://app20221210.onrender.com/data')
+        .then(response => response.json())
+        .then(json => {
+            json.forEach(element => {
+                var option = document.createElement('option')
+                option.innerHTML = element.name;
+                document.getElementById('DDL_Students').appendChild(option);
+            });
+        })
+</script>
